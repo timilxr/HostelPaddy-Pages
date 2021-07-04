@@ -6,12 +6,12 @@
 <html>
 
   <head>
-    <title>HostelPaddy - Account</title>
+    <title>HostelPaddy - Profile Settings</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no,
             width=device-width, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="title" content="HostelPaddy - Account settings">
+    <meta name="title" content="HostelPaddy - Profile settings">
     <meta name="author" content="@timilxr">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -36,7 +36,7 @@
     <meta name="apple-mobile-web-app-title" content="Add to Home">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="HostelPaddy - Account settings">
+    <meta property="og:title" content="HostelPaddy - Profile settings">
     <meta property="og:url" content="https://hostelpaddy.com">
     <meta property="og:description" content=" ">
     <meta property="og:site_name" content=" ">
@@ -89,7 +89,8 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">
 						<img src="img/notify/hostels.png" alt="" class="img-fluid">
-							<p>&nbsp;&nbsp;Hostels</p></a>
+							<p>&nbsp;&nbsp;Hostels</p>
+						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">
@@ -131,99 +132,133 @@
 		</nav>
 
 		<div class="second-nav d-none d-md-flex container pl-md-5">
-			<p>Settings</p>&nbsp;&nbsp;
+			<a href="#">Settings</a>&nbsp;&nbsp;
 			<p><span class="oi oi-caret-right"></span></p>&nbsp;&nbsp;
-			<p>Account</p>
+			<a href="#">Profile</a>
 		</div>
 
 
-		<div class="container Banner">
-			<h1 class="display1">Account</h1>
-		</div>
-
-		<div class="container row">
-			<div class="col-md-8">
-				<form action="" class="mx-md-5 w-md-50 mb-3">
-					<input type="search" class="form-control" id="" name="search" placeholder="Search for keywords" results>
-				</form>
-			</div>
-			<div class="col-md-4">
-				<button class="btn btn-outline-primary btn-lg mx-auto">
-					<img src="img/toggler/plus_circle.png" alt="" class="img-fluid my-auto">
-					Create preference alert
-				</button>
-			</div>
+		<div class="container Banner mt-5">
+			<h1 class="display1">Profile</h1>
 		</div>
 
 
-		<div class="container mt-5 pt-5">
-			<div class="d-flex mr-md-5 pr-md-5">
-				<h3 class="h4 mb-3"><b>Notifications</b></h3>
-				<div class="ml-auto align-self-center mr-md-5">
-					<img src="img/toggler/ontogglers.png" alt="" onclick='handleNotifications(this)' class="img-fluid">
-				</div>
-			</div>
-		</div>
+<script>
 
+			function handleToggle(btn){
+				
+						if (btn.id === "edit"){
+							btn.innerText = "Cancel";
+							btn.id = "Cancel"
+
+						} else {
+							btn.innerText = "Edit";
+							btn.id = "edit"
+						}
+					}
+</script>
 
 		<div class="container p-1 p-md-5" id="notifications">
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
+			<div class="row my-2 my-md-2 py-1 py-md-3">
 				<div class="col-10">
-					<h6 class="my-2">Hostel mate notifications</h6>
-					<p>Get notified when a student requests for a hostel mate</p>
+					<h6 class="my-2">Full name</h6>
+					<p>Micheal Johnson</p>
 				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" id="one" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="edit col-2 align-self-center">
+					<button data-toggle="collapse" data-target="#name" onclick="handleToggle(this)" id="edit">Edit</button>
+				</div>
+				<div class="col-12 collapse mt-2" id="name">
+					<form action="">
+						<div class="form-group">
+							<small><label for="fullname" class="mb-0">Enter fullname:</label></small>
+							<input type="text" class="form-control mb-2 borer-0" name="fullname" id="fullname" autofocus required/>
+						</div>
+						<input type="submit" class="btn btn-primary btn-sm mb-0">
+					</form>
 				</div>
 			</div>
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
+			<div class="row my-2 my-md-2 py-1 py-md-3">
 				<div class="col-10">
-					<h6 class="my-2">Hostel preferenece alert</h6>
-					<p>Get notified for listings matching your set choice of hostel</p>
+					<h6 class="my-2">Email</h6>
+					<a href="mailto:Micheal@gmail.com">Micheal@gmail.com</a>
 				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="edit col-2 align-self-center">
+					<button data-toggle="collapse" data-target="#mail" onclick="handleToggle(this)" id="edit">Edit</button>
+				</div>
+				<div class="col-12 collapse mt-2" id="mail">
+					<form action="">
+						<div class="form-group">
+							<small><label for="email" class="mb-0">Enter email:</label></small>
+							<input type="email" class="form-control mb-2 borer-0" name="email" id="email" autofocus required/>
+						</div>
+						<input type="submit" class="btn btn-primary btn-sm mb-0">
+					</form>
 				</div>
 			</div>
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
+			<div class="row my-2 my-md-2 py-1 py-md-3">
 				<div class="col-10">
-					<h6 class="my-2">Product update</h6>
+					<h6 class="my-2">Phone</h6>
+					<p>2348156776521</p>
 				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="edit col-2 align-self-center">
+					<button data-toggle="collapse" data-target="#phone" onclick="handleToggle(this)" id="edit">Edit</button>
+				</div>
+				<div class="col-12 collapse mt-2" id="phone">
+					<form action="">
+						<div class="form-group">
+							<small><label for="Tel" class="mb-0">Enter phone number:(2348156776521)</label></small>
+							<input type="tel" maxlength="13" minlength="10" class="form-control mb-2 borer-0" name="phone" id="Tel" 
+							pattern="[1-4]{3}[0-9]{10}" autofocus required/>
+						</div>
+						<input type="submit" class="btn btn-primary btn-sm mb-0">
+					</form>
 				</div>
 			</div>
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
+			<div class="row my-2 my-md-2 py-1 py-md-3">
 				<div class="col-10">
-					<h6 class="my-2">New hostel listing</h6>
+					<h6 class="my-2">Password</h6>
+					<input type="Password" value="password" readonly />
 				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="edit col-2 align-self-center">
+					<button data-toggle="collapse" data-target="#password" onclick="handleToggle(this)" id="edit">Edit</button>
+				</div>
+				<div class="col-12 collapse mt-2" id="password">
+					<form action="">
+						<div class="form-group">
+							<small><label for="pass" class="mb-0">Enter password:</label></small>
+							<input type="password" class="form-control mb-2 borer-0" name="password" id="pass" autofocus required/>
+						</div>
+						<input type="submit" class="btn btn-primary btn-sm mb-0">
+					</form>
 				</div>
 			</div>
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
+			<div class="row my-2 my-md-2 py-1 py-md-3">
 				<div class="col-10">
-					<h6 class="my-2">Email notification</h6>
+					<h6 class="my-2">School location</h6>
+					<p>Abia state</p>
 				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="edit col-2 align-self-center">
+					<button data-toggle="collapse" data-target="#loc" onclick="handleToggle(this)" id="edit">Edit</button>
 				</div>
-			</div>
-			<div class="row notification my-2 my-md-2 py-1 py-md-3">
-				<div class="col-10">
-					<h6 class="my-2">SMS notification</h6>
-				</div>
-				<div class="col-2 align-self-center">
-					<img src="img/toggler/offtogglers.png" alt="" onclick='handleToggle(this)' class="img-fluid my-auto mr-auto">
+				<div class="col-12 collapse mt-2" id="loc">
+					<form action="">
+						<div class="form-group">
+							<small><label for="location" class="mb-0">Enter school location:</label></small>
+							<input type="text" class="form-control mb-2 borer-0" name="location" id="location" autofocus required/>
+						</div>
+						<input type="submit" class="btn btn-primary btn-sm mb-0">
+					</form>
 				</div>
 			</div>
 		</div>
 
 		<div class="container mt-5 pt-5">
 			<div class="text-left mr-5">
-				<button class="btn btn-danger btn-lg mb-3">Delete account</button>
-				<h6 class="my-2">Before deleting your account, note that:</h6>
-				<p>Your profile including your settings and hostel preference will be lost. However, thee are some data that we are legally allowed to keep</p>
+				<h2 class="my-2 mb-4">Account type</h2>
+				<div class="notification my-2 my-md-2 p-2 py-md-3 pl-md-3 border">
+					<h6 class="my-2">Student</h6>
+					<p>Save, filter and easily search for hostels</p>
+				</div>
 			</div>
 		</div>
 
@@ -264,24 +299,7 @@
 				date = new Date(),
 				copyrightYear = date.getFullYear();
 			copyRight.innerText = copyrightYear;
-			var notificationDiv = document.getElementById("notifications");
-
-			function handleToggle(img){
-						if (img.src.match("img/toggler/offtogglers.png")){
-							return img.src = "img/toggler/ontogglers.png";
-						} else {
-							return img.src = "img/toggler/offtogglers.png";
-						}
-					}
-			function handleNotifications(img){
-				if (img.src.match("img/toggler/offtogglers.png")){
-					notificationDiv.className = "on";
-					return img.src = "img/toggler/ontogglers.png";
-				} else {
-					notificationDiv.className = "off";
-					return img.src = "img/toggler/offtogglers.png";
-				}
-			}
+			
 		</script>
 		<script src="vendor/jquery/jquery-3.1.1.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
